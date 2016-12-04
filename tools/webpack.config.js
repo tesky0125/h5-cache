@@ -43,7 +43,7 @@ export default {
     publicPath: '/',
     sourcePrefix: '',
     sourceMapFilename: '[name].js.map',
-    library: 'html5_framework',
+    library: 'h5_cache',
     libraryTarget: 'umd',
   },
   module: {
