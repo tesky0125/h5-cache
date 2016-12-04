@@ -1,7 +1,9 @@
 {
   "source": {
     "include": [
-      "src/app"
+      "src/store",
+      "src/cache",
+      "src/utils"
     ],
     "exclude": [],
     "includePattern": ".+\\.js$",
