@@ -17,7 +17,7 @@
  2. react方面：与react-router.state结合
 
 **该工具库在工作时使用，觉得复用性较高，便剥离出来与大家分享**
- 
+ **注意：**该库也被上传到公司gitlab，避免触碰公司政策红线，该库源码采用加密处理，可在npm install完成后，运行npm run decode查看源码并运行demo。
 
 
 

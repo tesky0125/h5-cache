@@ -32,7 +32,7 @@ async function encrypt() {
       if (err) return;
       files.forEach(file => {
         console.log(file);
-        encryptor.decryptFile(file.replace('.bin', ''), `${file}.replace('.bin','.js')`, key, (err) => {
+        encryptor.decryptFile(file, file.replace('.bin', ''), key, (err) => {
           // Encryption complete.
         });
       });
