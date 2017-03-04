@@ -1,6 +1,3 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-
 import Cahce from '../src/index';
 const {
   LocalCache,
@@ -21,39 +18,28 @@ class DemoCache extends LocalCache {
   }
 }
 
-const demoCache = DemoCache.getInstance();
-const data = {
-  'name': 'yanjj',
+window.onload = function() {
+  const demoCache = DemoCache.getInstance();
+  const cacheInput = document.getElementById('cacheInput');
+  const setCacheButton = document.getElementById('setCacheButton');
+  const getCacheButton = document.getElementById('getCacheButton');
+  const changeCacheButton = document.getElementById('changeCacheButton');
+  const cacheResult = document.getElementById('cacheResult');
+
+  setCacheButton.onclick = function() {
+    const data = {
+      'name': cacheInput.value,
+    };
+    demoCache.set(data);
+  };
+
+  getCacheButton.onclick = function() {
+    console.log(demoCache.get());
+    const value = demoCache.getAttr('name');
+    cacheResult.innerText = value;
+  };
+
+  changeCacheButton.onclick = function() {
+    demoCache.setAttr('name', cacheInput.value);
+  };
 };
-demoCache.set(data);
-demoCache.setAttr('name', 'fanke');
-
-
-export default class HelloWorldComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-  render() {
-    console.log('Hello html5-cache!');
-    return (
-      <div> Hello html5-cache! </div>
-    );
-  }
-}
-
-
-const rootInstance = ReactDom.render(
-  <HelloWorldComponent />,
-  document.getElementById('app')
-);
-
-if (module.hot) {
-  console.log('module.hot!')
-  require('react-hot-loader/Injection').RootInstanceProvider.injectProvider({
-    getRootInstances: function() {
-      // Help React Hot Loader figure out the root component instances on the page:
-      return [rootInstance];
-    },
-  });
-}

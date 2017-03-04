@@ -40,7 +40,7 @@ async function encrypt() {
   }
 
   if (clean) {
-    del(['build/**/*.js.bin', 'build/**/*.bin.txt']);
+    del(['src/**/*.js.bin']);
   }
 }
 

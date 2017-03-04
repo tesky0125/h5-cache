@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta  name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=no"/>
@@ -9,15 +8,18 @@
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">Hello, Cache Demo.</div>
+  <input id='cacheInput' value='yanjj'/>
+  <button id='setCacheButton'>SetCache</button>
+  <button id='getCacheButton'>GetCache</button>
+  <button id='changeCacheButton'>ChangeCache</button>
+  <div id="cacheResult"></div>
 
-    <script type="text/javascript" src="/libs/react.min.js"></script>
-    <script type="text/javascript" src="/libs/react-dom.min.js"></script>
-    <script type="text/javascript" src="/libs/polyfill.min.js"></script>
-    <script type="text/javascript" src="/libs/demo.js"></script>
-    <script type="text/javascript">
-        console.log('window.name:', window.name);
-    </script>
+  <script type="text/javascript" src="/libs/polyfill.min.js"></script>
+  <script type="text/javascript" src="/libs/demo.js"></script>
+  <script type="text/javascript">
+      console.log('window.name:', window.name);
+  </script>
 </body>
 
 </html>

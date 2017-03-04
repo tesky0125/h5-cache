@@ -24,6 +24,3 @@ npm-debug.log*
 pids
 *.pid
 *.seed
-
-#encrypt
-src/**/*.js
