@@ -11,7 +11,7 @@ const VERBOSE = global.VERBOSE;
 const bundler = webpack(webpackConfig);
 
 function start() {
-  run(require('./clean'))
+  return run(require('./clean'))
   .then(() => run(require('./copy')))
   .then(() => {
     browserSync({
