@@ -3,16 +3,15 @@
  */
 
 // usage: babel-node tools/run compile --cache --watch
-import {
+const {
   // exec, // don't use exec async, it will break log sequence
   execSync,
-} from 'child_process';
-import fs from 'file-system';
-import path from 'path';
-// import babel from 'babel-core';
+} = require('child_process');
+const fs = require('file-system');
+const path = require('path');
 const babel = require('babel-core');
-import gaze from 'gaze';
-import run from './run';
+const gaze = require('gaze');
+const run = require('./run');
 
 // simulate exec async
 const exec = function anonymous(cmd, options, cb) {
@@ -107,7 +106,7 @@ const saveCommitId = function anonymous(commitId) {
 };
 
 // 根据git commit情况增量编译js,可用来替换 babel ./src --out-dir ./build
-async function compile() {
+function compile() {
   // 编译js
   if (cache && fs.existsSync(releaseFile)) {
     const obj = JSON.parse(fs.readFileSync(releaseFile));
@@ -142,4 +141,4 @@ async function compile() {
   }
 }
 
-export default compile;
+module.exports = compile;

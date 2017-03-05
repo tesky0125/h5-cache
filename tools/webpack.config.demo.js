@@ -1,6 +1,6 @@
-import path from 'path';
-import webpack from 'webpack';
-import yargs from 'yargs';
+const path = require('path');
+const webpack = require('webpack');
+const yargs = require('yargs');
 
 const argv = yargs.usage('Usage: npm start [options]')
   .example('npm start -- --port=3000 --verbose', 'html5-cache demo build')
@@ -13,7 +13,7 @@ const VERBOSE = argv.verbose;
 
 console.log('PORT:', PORT, ',VERBOSE:', VERBOSE);
 
-export default {
+module.exports = {
   entry: {
     'libs/demo': ['webpack-hot-middleware/client', 'webpack/hot/dev-server', path.resolve(__dirname, '../demo') + path.sep + 'index.js'],
   },

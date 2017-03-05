@@ -75,18 +75,16 @@
   "scripts": {
     "jsdoc": "jsdoc -c jsdoc.json -R README.md",
     "eslint": "eslint src tools",
-    "test": "mocha src/**/*.test.js --require test/setup.js --compilers js:babel-register",
-    "test:watch": "mocha src/**/*.test.js --require test/setup.js --compilers js:babel-register --reporter min --watch",
-    "clean": "babel-node tools/run clean",
-    "copy": "babel-node tools/run copy",
-    "bundle": "babel-node tools/run bundle",
-    "compile": "babel-node tools/run compile",
-    "build": "babel-node tools/run build",
-    "release": "babel-node tools/run build --release",
-    "start": "babel-node tools/run start",
-    "debug": "babel-node tools/run start --port=3000",
-    "encode": "babel-node tools/run encrypt --encode",
-    "decode": "babel-node tools/run encrypt --decode",
-    "clean:code": "babel-node tools/run encrypt --clean"
+    "clean": "node tools/run clean",
+    "copy": "node tools/run copy",
+    "bundle": "node tools/run bundle",
+    "compile": "node tools/run compile",
+    "build": "node tools/run build",
+    "release": "node tools/run build --release",
+    "start": "node tools/run start",
+    "debug": "node tools/run start --port=3000",
+    "encode": "node tools/run encrypt --encode",
+    "decode": "node tools/run encrypt --decode",
+    "clean:code": "node tools/run encrypt --clean"
   }
 }

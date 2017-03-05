@@ -1,14 +1,14 @@
-import path from 'path';
-import encryptor from 'file-encryptor';
-import recursive from 'recursive-readdir';
-import fs from './lib/fs';
-import del from 'del';
+const path = require('path');
+const encryptor = require('file-encryptor');
+const recursive = require('recursive-readdir');
+const fs = require('./lib/fs');
+const del = require('del');
 
 const encode = process.argv.includes('--encode');
 const decode = process.argv.includes('--decode');
 const clean = process.argv.includes('--clean');
 
-async function encrypt() {
+function encrypt() {
 
   const key = 'encryptor-key';
   const encodeFolder = path.resolve(__dirname, '../src');
@@ -44,4 +44,4 @@ async function encrypt() {
   }
 }
 
-export default encrypt;
+module.exports = encrypt;

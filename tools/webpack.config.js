@@ -1,6 +1,6 @@
-import path from 'path';
-import webpack from 'webpack';
-import yargs from 'yargs';
+const path = require('path');
+const webpack = require('webpack');
+const yargs = require('yargs');
 
 const pkg = require(path.join(process.cwd(), 'package.json'));
 
@@ -15,7 +15,7 @@ const VERBOSE = argv.verbose;
 
 console.log('DEBUG:', DEBUG, ',VERBOSE:', VERBOSE);
 
-export default {
+module.exports = {
   entry: {
     'h5_cache': [path.resolve(__dirname, '../src/index.js')],
   },

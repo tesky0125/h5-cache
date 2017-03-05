@@ -1,12 +1,9 @@
-import run from './run';
+const run = require('./run');
 
-/**
- * 发布脚本
- */
-async function build() {
-  await run(require('./clean'));
-  await run(require('./bundle'));
-  // await run(require('./compile'));
+function build() {
+  return run(require('./clean'))
+  .then(() => run(require('./bundle')))
+  .then(() => require('./compile')());
 }
 
-export default build;
+module.exports = build;
