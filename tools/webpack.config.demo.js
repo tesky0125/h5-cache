@@ -9,6 +9,7 @@ const argv = yargs.usage('Usage: npm start [options]')
   .help('h').argv;
 
 const PORT = global.PORT = argv.port;
+const DEBUG = global.DEBUG = true;
 const VERBOSE = argv.verbose;
 
 console.log('PORT:', PORT, ',VERBOSE:', VERBOSE);
